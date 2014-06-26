@@ -1,5 +1,5 @@
 custom_options = node[:tomcat][:java_options_custom]
-node.normal[:tomcat][:java_options] = "${JAVA_OPTS} -Xmx#{node['solr']['tomcat']['xmx']} -Xms#{node['solr']['tomcat']['xms']} -Djava.awt.headless=true -XX:+UseConcMarkSweepGC #{custom_options}"
+node.normal[:tomcat][:java_options] = "-Xmx#{node['solr']['tomcat']['xmx']} -Xms#{node['solr']['tomcat']['xms']} -Djava.awt.headless=true -XX:+UseConcMarkSweepGC #{custom_options}"
 
 include_recipe 'tomcat'
 
