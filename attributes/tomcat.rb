@@ -4,3 +4,4 @@ default['solr']['tomcat']['xms'] = "256m"
 
 # Overrides for tomcat cookbook
 default['tomcat']['base_version'] = "6"
+default['tomcat']['loglevel'] = 'WARN'
