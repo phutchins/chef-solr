@@ -1,4 +1,5 @@
 # Parsed attributes for java opts
+default['tomcat']['java_options_custom'] = ""
 default['solr']['tomcat']['xmx'] = "512m"
 default['solr']['tomcat']['xms'] = "256m"
 
