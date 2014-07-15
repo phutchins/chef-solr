@@ -9,7 +9,7 @@
 end
 
 ['xmx', 'xms'].each do |attr|
-  node.normal['solr']['tomcat'][attr] = node['memory'].to_i * node['solr']['tomcat']["#{attr}_percent"].to_i/100
+  node.normal['solr']['tomcat'][attr] = node['memory']['total'].to_i * node['solr']['tomcat']["#{attr}_percent"].to_i/100
 end
 
 custom_options = node[:tomcat][:java_options_custom]
