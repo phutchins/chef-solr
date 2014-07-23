@@ -20,3 +20,10 @@ template File.join(node[:solr][:config_dir], "solrconfig.xml") do
   notifies :restart, "service[tomcat6]", :delayed
 end
 
+template File.join(node['tomcat']['webapp_dir'], "solr/WEB-INF/classes", "logging.properties") do
+  source "logging.properties.erb"
+  variables({
+    :root_log_level => node[:solr][:root_log_level]
+  })
+  notifies :restart, "service[tomcat6]", :delayed
+end

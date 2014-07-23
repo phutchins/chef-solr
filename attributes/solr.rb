@@ -4,6 +4,7 @@ default[:solr][:install_method] = 'from_archive'
 # Global settings
 default[:solr][:data_dir] = '/var/lib/solr/data'
 default[:solr][:write_lock_timeout] = '1000'
+default[:solr][:root_log_level] = "WARNING"
 
 # For package install
 default[:solr][:package_version] = "1.4.1+dfsg1-2ubuntu2"
