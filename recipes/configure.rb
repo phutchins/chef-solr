@@ -10,6 +10,13 @@ directory node[:solr][:data_dir] do
   action :create
 end
 
+directory File.join(node['tomcat']['webapp_dir'], "solr/WEB-INF/classes") do
+  owner "tomcat6"
+  group "tomcat6"
+  recursive true
+  action :create
+end
+
 template File.join(node[:solr][:config_dir], "solrconfig.xml") do
   source "solrconfig.xml.erb"
   variables({
